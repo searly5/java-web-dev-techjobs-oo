@@ -3,6 +3,9 @@ package org.launchcode.techjobs_oo;
 import java.util.Objects;
 
 public class Location {
+
+
+
     private int id;
     private static int nextId = 1;
     private String value;
@@ -10,6 +13,14 @@ public class Location {
     public Location() {
         id = nextId;
         nextId++;
+    }
+
+    public Location(String value) {
+        this();
+        this.value = value;
+    }
+    public Location(int id) {
+        this.id = id;
     }
 
     // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The
