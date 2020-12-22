@@ -1,4 +1,5 @@
 package org.launchcode.techjobs_oo;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.Objects;
 
@@ -19,19 +20,30 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-    public Job() {
-        id = nextId;
+    public Job () {
+        this.id = nextId;
         nextId++;
     }
 
+
+
+
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-        this.id = nextId++;
+
+        }
+
+    public Job(String betty, String mastercard, String saint_louis, String technical, String java) {
     }
+
+    public Job(int i) {
+    }
+
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -96,4 +108,5 @@ public class Job {
     public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
+
 }
