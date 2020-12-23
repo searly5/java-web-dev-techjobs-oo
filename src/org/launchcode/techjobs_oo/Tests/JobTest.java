@@ -23,6 +23,7 @@ public class JobTest {
         job_1 = new Job();
         job_2 = new Job();
 
+
     }
     @Test
     public void testSettingJobId() {
@@ -49,4 +50,22 @@ public class JobTest {
         assertFalse(job_4.equals(job_5));
     }
 
+
+
+    @Test
+    public void toString_returnsBlankLine() {
+        Job blankTest;
+        blankTest = new Job();
+        String test  = blankTest.toString();
+        assertThat(test.contains("______" + test + "______"));
+
+    }
+
+    private void assertThat(boolean contains) {
+
+    }
 }
+
+
+
+
