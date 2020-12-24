@@ -18,10 +18,17 @@ public class JobTest {
 
     @Before
     public void createJobObject() {
-        test_job = new Job("Betty", "Mastercard", "Saint Louis", "Technical", "Java");
-        test_id = new Job(1);
+        test_job = new Job(
+                "Betty",
+                new Employer("Mastercard"),
+                new Location("Saint Louis"),
+                new PositionType("Technical"),
+                new CoreCompetency("Java"));
+        test_id = new Job();
         job_1 = new Job();
         job_2 = new Job();
+
+
 
 
     }
@@ -36,7 +43,11 @@ public class JobTest {
     }
     @Test
     public void testJobConstructorSetsAllFields() {
-        job_3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        job_3 = new Job("Product tester",
+                new Employer("ACME"),
+                new Location("Desert"),
+                new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
         assertEquals("Product tester", job_3.getName());
         assertEquals("ACME", job_3.getEmployer().getValue());
         assertEquals("Desert", job_3.getLocation().getValue());
@@ -45,8 +56,16 @@ public class JobTest {
     }
     @Test
     public void testJobsForEquality() {
-        job_4 = new Job("Window washer", new Employer("Windows Plus"), new Location("France"), new PositionType("Clean manager"), new CoreCompetency("reliable"));
-        job_5 = new Job("Window washer", new Employer("Windows Plus"), new Location("France"), new PositionType("Clean manager"), new CoreCompetency("reliable"));
+        job_4 = new Job("Window washer",
+                new Employer("Windows Plus"),
+                new Location("France"),
+                new PositionType("Clean manager"),
+                new CoreCompetency("reliable"));
+        job_5 = new Job("Window washer",
+                new Employer("Windows Plus"),
+                new Location("France"),
+                new PositionType("Clean manager"),
+                new CoreCompetency("reliable"));
         assertFalse(job_4.equals(job_5));
     }
 
@@ -54,7 +73,12 @@ public class JobTest {
 
     @Test
     public void toString_returnsBlankLine() {
-        job_4 = new Job("Window washer", new Employer("Windows Plus"), new Location("France"), new PositionType("Clean manager"), new CoreCompetency("reliable"));
+        job_4 = new Job("Window washer",
+                new Employer("Windows Plus"),
+                new Location("France"),
+                new PositionType("Clean manager"),
+                new CoreCompetency("reliable"));
+
         String output =  String.format
                 ("\nID: %d\n" +
                 "Name: %s\n" +

@@ -35,11 +35,6 @@ public class Job {
 
     }
 
-    public Job(String betty, String mastercard, String saint_louis, String technical, String java) {
-    }
-
-    public Job(int i) {
-    }
 
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -63,20 +58,22 @@ public class Job {
     public String toString() {
         String output = "";
         if (name == "" || name == null){
-            name = "Data not available";
-            if (employer.getValue().equals("") || employer.getValue() == null) {
-                employer.setValue("Data not available");
-                if (location.getValue().equals("") || location.getValue() == null ) {
-                    location.setValue("Data not available");
-                    if (positionType.getValue().equals("") || positionType.getValue() == null) {
-                        positionType.setValue("Data not available");
-                        if (coreCompetency.getValue().equals("") || coreCompetency.getValue() == null) {
-                            coreCompetency.setValue("Data not available");
-                        }
-                    }
-                }
-            }
-        }
+            name = "Data not available";}
+
+        if (employer.getValue().equals("") || employer.getValue() == null) {
+                employer.setValue("Data not available");}
+
+        if (location.getValue().equals("") || location.getValue() == null ) {
+                    location.setValue("Data not available");}
+        if (positionType.getValue().equals("") || positionType.getValue() == null) {
+                        positionType.setValue("Data not available");}
+        if (coreCompetency.getValue().equals("") || coreCompetency.getValue() == null) {
+                            coreCompetency.setValue("Data not available");}
+
+
+
+
+
 
         output = String.format
                 ("\nID: %d\n" +
