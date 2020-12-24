@@ -54,16 +54,22 @@ public class JobTest {
 
     @Test
     public void toString_returnsBlankLine() {
-        Job blankTest;
-        blankTest = new Job();
-        String test  = blankTest.toString();
-        assertThat(test.contains("______" + test + "______"));
+        job_4 = new Job("Window washer", new Employer("Windows Plus"), new Location("France"), new PositionType("Clean manager"), new CoreCompetency("reliable"));
+        String output =  String.format
+                ("\nID: %d\n" +
+                "Name: %s\n" +
+                "Employer: %s\n" +
+                "Location: %s\n" +
+                "Position Type: %s\n" +
+                "Core Competency: %s\n", job_4.getId(), job_4.getName(), job_4.getEmployer(), job_4.getLocation(), job_4.getPositionType(), job_4.getCoreCompetency());
+         assertEquals(output, job_4.toString());
+
 
     }
 
-    private void assertThat(boolean contains) {
 
-    }
+
+
 }
 
 
